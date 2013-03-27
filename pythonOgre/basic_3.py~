@@ -1,0 +1,15 @@
+import ogre.renderer.OGRE as ogre
+import SampleFramework as sf
+ 
+ 
+class TutorialApplication (sf.Application):
+ 
+    def _createScene (self):
+        self.sceneManager.setWorldGeometry ("terrain.cfg")
+ 
+    def _chooseSceneManager (self):
+        self.sceneManager = self.root.createSceneManager (ogre.ST_EXTERIOR_CLOSE, 'TerrainSM')
+ 
+if __name__ == '__main__':
+    ta = TutorialApplication ()
+    ta.go ()
